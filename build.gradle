@@ -1,0 +1,38 @@
+apply plugin: 'java-library'
+/*apply plugin: 'war'
+apply plugin: 'org.akhikhl.gretty'
+
+buildscript {
+	repositories {
+	  jcenter()
+	  // enable this to use snapshot versions of Gretty:
+	  maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local' }
+	}
+  
+	dependencies {
+	  classpath 'org.akhikhl.gretty:gretty:+'
+	}
+}
+gretty {
+	httpPort = 8090
+	contextPath = '/security_ehcache'
+	// ... many more properties
+  }
+
+*/
+  
+
+dependencies {
+    
+    compile group: 'org.springframework', name: 'spring-context', version: '4.3.8.RELEASE'
+    compile group: 'redis.clients', name: 'jedis', version: '2.6.2'
+    compile group: 'org.springframework.data', name: 'spring-data-redis', version: '1.6.2.RELEASE'
+    compile group: 'log4j', name: 'log4j', version: '1.2.16'
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
